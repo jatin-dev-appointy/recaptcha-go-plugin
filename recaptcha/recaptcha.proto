@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package recaptcha;
+
+option go_package = ".;pb";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MethodOptions {
+  // schema is used to tag an rpc as query or mutation.
+  bool require_recaptcha = 50001;
+}
